@@ -1,5 +1,5 @@
 #######################################################
-# cmake file for building %(repository)s analysis package
+# cmake file for building ILDbench_ttbb4q analysis package
 # @author Ete Remi, DESY
 #######################################################
 
@@ -10,7 +10,7 @@ include_directories( BEFORE include )
 # -------------------------------------------------
 # build the project library
 # This compiles everything in the src directory and build a library
-# called lib%(repository)s.so, that with be install in the lib directory
+# called libILDbench_ttbb4q.so, that with be install in the lib directory
 # in the top level directory of your project 
 aux_source_directory( src SRC_FILES )
 add_shared_library( ${PROJECT_NAME} ${SRC_FILES} )
