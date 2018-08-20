@@ -1,0 +1,54 @@
+  
+    <marlin>
+    
+    <execute>
+       <processor name="MyTrueJet" />
+       <processor name="MyCheat" />
+       <processor name="myuse_truejet"/>
+       <processor name="MyLCIOOutputProcessor"/>
+    </execute>
+    
+  <!--######## Global   ######################################## -->
+       <global>
+       <parameter name="LCIOInputFiles"> 
+/hsm/ilc/grid/storm/prod/ilc/mc-opt-2/ild/dst-merged/500-TDR_ws/6f_ttbar/ILD_l5_o1_v02/v02-00/rv02-00.sv02-00.mILD_l5_o1_v02.E500-TDR_ws.I108677.Pyyuyyu.eL.pR.n001.d_dstm_9886_2.slcio
+       </parameter>
+       <parameter name="GearXMLFile">
+/cvmfs/ilc.desy.de/sw/ILDConfig/v02-00-01/StandardConfig/production/Gear/gear_ILD_l5_v02.xml
+       </parameter>
+       <parameter name="MaxRecordNumber" value="100" />
+       <parameter name="SkipNEvents" value="0"/>
+       <parameter name="SupressCheck" value="false"/>
+       <!--parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> MESSAGE </parameter-->
+       <parameter name="RandomSeed" value="1234567890" />
+       </global>
+  
+  <processor name="MyTrueJet" type="TrueJet">
+    <!--parameter name="MCParticleCollection" type="string" lcioInType="MCParticle">MCParticlesSkimmed</parameter-->
+    <parameter name="MCParticleCollection" type="string" lcioInType="MCParticle">MCParticle</parameter>
+  </processor>
+   
+  <processor name="MyCheat" type="cheat">
+    <parameter name="TrueJetCollectionName" type="string" lcioInType="ReconstructedParticle">TrueJets</parameter>
+  </processor>
+
+  <processor name="myuse_truejet" type="Use_TrueJet">
+    <parameter name="MCParticleCollection" type="string" lcioInType="MCParticle">MCParticle</parameter>
+   <!-- Using the defaults above, only your "own" parameters are needed 
+    <parameter name="MCParticleCollection" type="string" lcioInType="MCParticle">MCParticlesSkimmed</parameter>
+    <parameter name="RecoParticleCollection" type="string"  lcioInType="ReconstructedParticle">PandoraPFOs</parameter>
+    <parameter name="RecoMCTruthLinkName" type="string" lcioInType="LCRelation"> RecoMCTruthLink </parameter>
+    -->
+  </processor>
+
+  <processor name="MyLCIOOutputProcessor" type="LCIOOutputProcessor">
+  	<parameter name="LCIOOutputFile" type="string"> 
+           testout.slcio
+        </parameter>
+  	<parameter name="LCIOWriteMode" type="string" value="WRITE_NEW"/>
+  </processor>
+
+  </marlin>
+  
+
+  
