@@ -362,7 +362,8 @@ class ttbar : public Processor
   float qptsumb1;
   float qptsumb2;
 
-  float  mccostheta ;
+  float  mccostheta ; // for top
+  float  mcmass ;     // for top
   float mccosinustheta;
   //  float  mccostheta ;
 
@@ -421,6 +422,10 @@ class ttbar : public Processor
 
   TH1F* h_mccosthetatop;
   TH1F* h_mccosthetatopbar;
+  TH1F* h_mcmasstop; 
+  TH1F* h_mcmasstopbar; 
+  TH1F* h_mcmasswp; // W+
+  TH1F* h_mcmasswm; // W-
 
   TH1F* h_costhetatop;
   TH1F* h_costhetatopbar;

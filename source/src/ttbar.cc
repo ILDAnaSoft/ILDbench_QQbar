@@ -46,6 +46,7 @@ ttbar::ttbar() : Processor("ttbar")
 void ttbar::init()
 { 
   mccostheta=-999;
+  mcmass=-999;
   nforward=0;
   nback =0;
   _nRun = 0;
@@ -183,6 +184,11 @@ void ttbar::init()
      h_mccosthetatop =  new TH1F ("MCCosThetaT", "MCCosthetaT", 100, -1,1);
 
      h_mccosthetatopbar =  new TH1F ("MCCosThetaTbar", "MCCosthetaTbar", 100, -1,1);    
+
+     h_mcmasstop =  new TH1F ("MCMassT", "MCMassT", 120, 140, 200);
+     h_mcmasstopbar =  new TH1F ("MCMassTbar", "MCMassTbar", 120, 140, 200);
+     h_mcmasswp =  new TH1F ("MCMassWp", "MCMassW+", 80, 60, 100);
+     h_mcmasswm =  new TH1F ("MCMassWm", "MCMassW-", 80, 60, 100);
 
      h_vtxcharge =  new TH1F ("Vertex_Charge", "Vertex_Charge", 100, -3,3);    
 
@@ -577,7 +583,8 @@ void ttbar::processEvent(LCEvent * evt)
 	  }
 	  MCParticleVec BPar = mcpart1->getParents();
 	}
-	if( abs(PDG)<5 ){
+
+	if( abs(PDG)<5 ){ // RY. Does this part work correctly?
 	  nqs++;
 	  npartons++;
 	  
@@ -669,6 +676,11 @@ void ttbar::processEvent(LCEvent * evt)
 	  nws++; 
 	  nmcws++;
 	  NMCWs->Fill(nmcws);
+          if (PDG==24) {
+            h_mcmasswp->Fill(mcpart1->getMass());
+          } else {
+            h_mcmasswm->Fill(mcpart1->getMass());
+          }
 	  MCParticleVec wdau = mcpart1->getDaughters();
 	  for (u_int i=0; i< wdau.size();i++){
 	    MCParticle *wdaus = wdau[i];
@@ -689,14 +701,17 @@ void ttbar::processEvent(LCEvent * evt)
 	  if(nmctops<3) NMCTops->Fill(nmctops);
 	  TVector3 TopMom(mcpart1->getMomentum()[0],mcpart1->getMomentum()[1],mcpart1->getMomentum()[2]);
 	  mccostheta=TopMom.CosTheta();
+          mcmass=mcpart1->getMass();
 	  ntops++;
 	  if(PDG==6 && nmctops<3 ){
 	    h_mccosthetatop->Fill(mccostheta);
 	    topangle_mc->Fill(mccostheta);
+            h_mcmasstop->Fill(mcmass);
 	  }else if(PDG== -6 &&  nmctops < 3 ){
 	    h_mccosthetatopbar->Fill(mccostheta);
 	    mccosinustheta=-1*mccostheta;
 	    topangle_mc->Fill(mccosinustheta);
+            h_mcmasstopbar->Fill(mcmass);
 	  }
 	  MCParticleVec tdau = mcpart1->getDaughters();
 	  for (u_int i=0; i< tdau.size();i++){
