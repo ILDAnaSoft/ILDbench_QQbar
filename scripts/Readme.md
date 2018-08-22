@@ -11,13 +11,13 @@ ryo : test directory mainly for debugging purpose.
         - SKELETON : python scripts to be copied into a working directory e.g. test. These scripts will help to run many samples.  
         - XML_TMPLATES : steering files to be used in python scripts above.  
         - Example usage :   
-          ```shell
-           mkdir test  
-           cd test  
-           cp ../SKELTON/*.py .
-	   EDIT conf.py so that it can read correct input directory where sample files exist, and specify template steering file etc. 
-	   python makeSteeringFiles.py  (This creates steering files in a directory, generatedXMLs, which automatically created.)
-	   python manyRun.py (Submit jobs for the steering files in generatedXMLs.)
-          ```
+```shell
+mkdir test 
+cd test    
+cp ../SKELTON/*.py .
+EDIT conf.py so that it can read correct input directory where sample files exist, and specify template steering file etc. 
+python makeSteeringFiles.py  (This creates steering files in a directory, generatedXMLs, which automatically created.)
+python manyRun.py (Submit jobs for the steering files in generatedXMLs.)
+```  
  	
 
