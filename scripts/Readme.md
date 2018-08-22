@@ -15,9 +15,11 @@ Put your Marlin steering files here and explain to which processor they refer (i
         mkdir test 
         cd test    
         cp ../SKELTON/*.py .
+        ```  
         EDIT conf.py so that it can read correct input directory where sample files exist, and specify template steering file etc. 
-        python makeSteeringFiles.py  (This creates steering files in a directory, generatedXMLs, which automatically created.)
-        python manyRun.py (Submit jobs for the steering files in generatedXMLs.)
+        ```shell
+        python makeSteeringFiles.py  # This creates steering files in a directory, generatedXMLs, which automatically created.
+        python manyRun.py            # Submit jobs for the steering files in generatedXMLs.
         ```  
  	
 
