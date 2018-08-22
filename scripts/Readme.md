@@ -8,9 +8,9 @@ lcfiplus : test weight files of LCFIPlus. This should be replaced to a central o
 ryo : test directory mainly for debugging purpose.  
       - init_ilcsoft_v02-00-01_default.sh for setting environment fro KEKCC.  
       - run_l5 :   
-	- SKELETON : python scripts to be copied into a working directory e.g. test. These scripts will help to run many samples.  
-	- XML_TMPLATES : steering files to be used in python scripts above.  
-	- Example usage :   
+        - SKELETON : python scripts to be copied into a working directory e.g. test. These scripts will help to run many samples.  
+        - XML_TMPLATES : steering files to be used in python scripts above.  
+        - Example usage :   
           ```shell
            mkdir test  
            cd test  
