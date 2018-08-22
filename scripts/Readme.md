@@ -12,11 +12,11 @@ Put your Marlin steering files here and explain to which processor they refer (i
       - XML_TMPLATES : steering files to be used in python scripts above.  
       - Example usage :   
         ```shell
-        mkdir test 
+        mkdir test                   # working directory
         cd test    
         cp ../SKELTON/*.py .
         ```  
-        EDIT conf.py so that it can read correct input directory where sample files exist, and specify template steering file etc. 
+        Edit conf.py so that it can read correct input directory where sample files exist, and specify template steering file etc. 
         ```shell
         python makeSteeringFiles.py  # This creates steering files in a directory, generatedXMLs, which automatically created.
         python manyRun.py            # Submit jobs for the steering files in generatedXMLs.
