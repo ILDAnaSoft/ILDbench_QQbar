@@ -7,11 +7,12 @@ See [https://confluence.desy.de/pages/viewpage.action?pageId=87344671](https://c
 
 ### Installation
 
-Explain here:
-
-- what are the package dependencies (iLCSoft, others ?)
-- how to compile your package. Should normally be something like:
-
+Dependencies: 
+ ILCSoft v02-00-01
+ GCC 4.8
+ cmake 3.4
+ 
+In case no ILCSoft installed, it can be sourced from /afs/desy. 
 ```shell
 source /path/to/ilcsoft/init_ilcsoft.sh
 mkdir build
