@@ -1,55 +1,17 @@
+## ILD QQbar analysis code for the ILD Bencharking for the IDR document.
+https://confluence.desy.de/display/ILD/Benchmarks+for+physics-driven+detector+optimisation
 
-## ILDbench_ttbb4q
+Different producers and analysis code are writen and developed further
+in the
 
-ttbar -> bb 4j analysis
+https://github.com/QQbarAnalysis/
 
-See [https://confluence.desy.de/pages/viewpage.action?pageId=87344671](https://confluence.desy.de/pages/viewpage.action?pageId=87344671).
+community.
 
-### Installation
+Main Branch: QQbarAnalysisBranch2018
 
-Dependencies: 
- ILCSoft v02-00-01
- GCC 4.8
- cmake 3.4
- 
-In case no ILCSoft installed, it can be sourced from /afs/desy. 
-```shell
-source /path/to/ilcsoft/init_ilcsoft.sh
-mkdir build
-cd build
-cmake -C $ILCSOFT/ILCSoft.cmake ..
-make install
-```
+Main Packages are: (to be done)
 
-### How to run the analysis
-
-Explain here:
-
-- where to find data needed for your analysis or how to produce them
-- how to run you analysis: 
-   - Marlin processors to run ?
-   - ROOT macros to run ?
-   - Shell scripts ?
-   - Run the analysis on grid if you provide scripts for that
-
-Example:
-
-```shell
-export MARLIN_DLL=./lib/libILDbench_ttbb4q.so
-Marlin ./scripts/ExampleProcessor.xml
-```
-
-If you want to provide a lot of details on your analysis, use the doc/Readme.md and point to it from this Readme.md file:
-
-More documentation available here in [doc/Readme.md](doc/Readme.md) !
-
-### Issues and contact
-
-Explain here how can people reach you:
-
-- via the Github issue interface. For the skeleton package: https://github.com/ILDAnaSoft/ILDbench_ttbb4q/issues
-- **not mandatory**:
-    - email address
-    - working institute
-
+Contact: irlesNOTSMPAM@lal.in2p3.fr
+https://github.com/airqui
 
