@@ -1,5 +1,5 @@
 ## ILD QQbar analysis code for the ILD Bencharking for the IDR document.
-https://confluence.desy.de/display/ILD/Benchmarks+for+physics-driven+detector+optimisation
+https://confluence.desy.de/pages/viewpage.action?pageId=87344671
 
 Different producers and analysis code are writen and developed further
 in the
